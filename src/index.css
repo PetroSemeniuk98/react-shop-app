@@ -75,14 +75,25 @@ nav {
 }
 @media (max-width: 475px) {
   .basket {
-    width: 27.7rem;
+    width: 27.8rem;
     top: 10rem;
+    animation: show 500ms ease-in-out;
+  }
+  @keyframes snow {
+    from {
+      top: 70%;
+      opacity: 0;
+    }
+
+    to {
+      top: 10rem;
+      opacity: 1;
+    }
   }
 }
 @media (max-width: 417px) {
   .basket {
     width: 26.6rem;
-   
   }
 }
 
