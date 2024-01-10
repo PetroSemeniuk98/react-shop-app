@@ -77,14 +77,14 @@ nav {
   .basket {
     width: 27.8rem;
     top: 10rem;
-    animation: show 500ms ease-in-out;
+    animation: showK 500ms ease-in-out;
   }
-  @keyframes snow {
+  @keyframes showK {
     from {
       top: 70%;
       opacity: 0;
     }
-
+  
     to {
       top: 10rem;
       opacity: 1;
@@ -102,12 +102,13 @@ nav {
     top: 70%;
     opacity: 0;
   }
-
+  
   to {
     top: 20rem;
     opacity: 1;
   }
 }
+
 
 .basket-quantity {
   vertical-align: middle;
