@@ -73,6 +73,16 @@ nav {
   box-shadow: 0 0 30px black;
   animation: show 500ms ease-in-out;
 }
+@media (max-width: 475px) {
+  .basket {
+    width: 30.6rem;
+  }
+}
+@media (max-width: 417px) {
+  .basket {
+    width: 26.6rem;
+  }
+}
 
 @keyframes show {
   from {
