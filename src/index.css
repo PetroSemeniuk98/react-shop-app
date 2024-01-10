@@ -75,12 +75,14 @@ nav {
 }
 @media (max-width: 475px) {
   .basket {
-    width: 27.6rem;
+    width: 27.7rem;
+    top: 10rem;
   }
 }
 @media (max-width: 417px) {
   .basket {
     width: 26.6rem;
+   
   }
 }
 
