@@ -42,7 +42,8 @@ const Shop = () => {
   const handleBasket = () => {
     setBasketShow(!isBasketShow);
   };
-  const addQuantity = (itemId) => {
+
+  const incQuantity = (itemId) => {
     const newOrder = order.map((item) => {
       if (item.id === itemId) {
         const newQuantity = item.quantity + 1;
@@ -57,6 +58,7 @@ const Shop = () => {
     });
     setOrder(newOrder);
   };
+
   const decQuantity = (itemId) => {
     const newOrder = order.map((item) => {
       if (item.id === itemId) {
@@ -72,15 +74,18 @@ const Shop = () => {
     });
     setOrder(newOrder);
   };
+
   const removeFromBasket = (itemId) => {
     const newOrder = order.filter((item) => item.id !== itemId);
     setOrder(newOrder);
   };
+
   useEffect(function getGoods() {
     fetch(baseURL, { headers: { Authorization: API_KEY } })
       .then((respons) => respons.json())
       .then((data) => setGoods(data.featured), setLoadind(false));
   }, []);
+
   const closeAlert = () => {
     setAlert("");
   };
@@ -98,7 +103,7 @@ const Shop = () => {
           order={order}
           handleBasket={handleBasket}
           removeFromBasket={removeFromBasket}
-          addQuantity={addQuantity}
+          addQuantity={incQuantity}
           decQuantity={decQuantity}
         />
       )}
