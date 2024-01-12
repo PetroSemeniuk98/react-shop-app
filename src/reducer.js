@@ -1,5 +1,3 @@
-
-
 function reducer(state, { type, payload }) {
   switch (type) {
     case "CLOSE_ALERT":
@@ -26,7 +24,7 @@ function reducer(state, { type, payload }) {
         };
         newOrder = [...state.order, newItem];
       } else {
-        const newOrder = state.order.map((orderItem, index) => {
+        newOrder = state.order.map((orderItem, index) => {
           if (index === itemIndex) {
             return {
               ...orderItem,
@@ -79,6 +77,12 @@ function reducer(state, { type, payload }) {
       return {
         ...state,
         isBasketShow: !state.isBasketShow,
+      };
+    case "SET_GOODS":
+      return {
+        ...state,
+        goods: payload || [],
+        loading: false,
       };
     default:
       return state;

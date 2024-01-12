@@ -1,20 +1,23 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ShopContex } from "../contex";
 
 const Alert = (props) => {
-  const { name = "", alert = Function.prototype } = props;
+  // const { name = "", alert = Function.prototype } = props;
+
+  const { alertName, closeAlert } = useContext(ShopContex);
 
   useEffect(() => {
-    const timerId = setTimeout(alert, 3000);
+    const timerId = setTimeout(closeAlert, 3000);
 
     return () => {
       setInterval(timerId);
     };
     // eslint-disable-next-line
-  }, [name]);
+  }, [alertName]);
 
   return (
     <div id="toast-container">
-      <div className="toast"> {name} added to cart!</div>
+      <div className="toast"> {alertName} added to cart!</div>
     </div>
   );
 };

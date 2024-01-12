@@ -36,5 +36,9 @@ export const ContexProvider = ({ children }) => {
     dispatch({ type: "HANDLE_BASKET" });
   };
 
+  value.setGoods = (data) => {
+    dispatch({ type: "SET_GOODS", payload: data });
+  };
+
   return <ShopContex.Provider value={value}>{children}</ShopContex.Provider>;
 };

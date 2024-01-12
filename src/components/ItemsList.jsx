@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import { ItemCard } from "./ItemCard";
+import { ShopContex } from "../contex";
 
-const ItemsList = (props) => {
-  const { items = [], addToBasket = Function.prototype } = props;
+
+
+const ItemsList = () => {
+  const { goods = [] } = useContext(ShopContex)
   return (
     <div className="items">
-      {items.map((item) => (
-        <ItemCard key={item.id} {...item} addToBasket={addToBasket} />
+      {goods.map((item) => (
+        <ItemCard key={item.id} {...item} />
       ))}
     </div>
   );

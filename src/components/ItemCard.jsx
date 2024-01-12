@@ -1,3 +1,8 @@
+import { useContext } from "react";
+import { ShopContex } from "../contex";
+
+
+
 const ItemCard = (props) => {
     const {
       full_background: image,
@@ -5,9 +10,8 @@ const ItemCard = (props) => {
       description: desc,
       name,
       price,
-      addToBasket = Function.prototype
-     
     } = props;
+    const {addToBasket}=useContext(ShopContex)
     return (
       <div className="card">
         <div className="card-image">
