@@ -5,6 +5,7 @@ export const ShopContex = createContext();
 
 const initialState = {
   goods: [],
+  meals: [],
   loading: true,
   order: [],
   isBasketShow: false,
@@ -38,6 +39,10 @@ export const ContexProvider = ({ children }) => {
 
   value.setGoods = (data) => {
     dispatch({ type: "SET_GOODS", payload: data });
+  };
+
+  value.setMeals = (data) => {
+    dispatch({ type: "SET_MEALS", payload: data });
   };
 
   return <ShopContex.Provider value={value}>{children}</ShopContex.Provider>;

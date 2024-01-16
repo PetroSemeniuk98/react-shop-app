@@ -84,6 +84,12 @@ function reducer(state, { type, payload }) {
         goods: payload || [],
         loading: false,
       };
+    case "SET_MEALS":
+      return {
+        ...state,
+        meals: payload || [],
+        loading: false,
+      };
     default:
       return state;
   }
